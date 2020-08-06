@@ -1,0 +1,134 @@
+#landing-page {
+    background: var(--color-primary);
+}
+
+#landing-page #container {
+    color:
+    var(--color-text-in-primary);
+}
+
+.logo-container img {
+    height: 10rem;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+.logo-container h2 {
+    font-weight: 500; 
+    font-size: 3.1rem;
+    line-height: 3.8rem;
+    margin-top: 0.8rem; /* it separes a little bit the h2 text from the tile img */ 
+}
+
+.hero-image {
+    width: 100%; /*100% of dad his, witch is the id container, in main.css */
+}
+
+.button-container {
+    display: flex; /* justify-content needs display: flex to work */
+    justify-content: center; /* put the buttons on the center */
+    margin: 3.2rem 0;
+}
+
+.button-container a {
+    width: 30rem;
+    height: 10.4rem;
+    border-radius: 0.8rem; /* rounds the edges */
+    font: 700 2.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: var(--color-button-text);
+
+    transition: background 0.3s;
+}
+
+.button-container a img {
+    width: 4rem;
+    margin-right: 2.4rem;
+}
+
+.button-container a.study {
+    background-color: var(--color-primary-lighter);
+    margin-right: 1.6rem;
+}
+
+.button-container a.study:hover {
+    background-color: var(--color-primary-light);
+
+}
+
+.button-container a.teach {
+    background-color: var(--color-secondary);
+}
+
+.button-container a.teach:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+.total-connections {
+    font-size: 1.8rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-connections img {
+    margin-left: 0.8rem;
+}
+
+@media (max-width: 699px){
+    :root {
+        font-size: 40%;
+    }
+}
+
+@media (min-width: 1100px) { /* @media is used to configure a page behavior to big screens, as a computer screen, for examle */ 
+    #landing-page #container {
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr; 
+        grid-template-rows: 350px 1fr;
+        grid-template-areas:
+        "proffy image image"
+        "button button texting";
+        column-gap: 87px; /* gap separes the grids */
+        row-gap: 86px;
+    }
+    .logo-container {
+        grid-area: proffy;
+        text-align: initial;
+        align-self: center; /* it fixes the content on the center of the grid */ 
+        margin: 0;
+    }
+
+    .logo-container img {
+        height: 127px;
+    }
+
+    .hero-image {
+        grid-area: image;
+        height: 350px;
+    }
+
+    .button-container {
+        grid-area: button;
+        justify-content: flex-start; /* overwirte the previus button configuration */
+        margin: 0;
+    }
+
+    .total-connections {
+        grid-area: texting;
+        justify-self: end; /* grid */
+        font-size: 1.3rem;
+    }
+}
+
