@@ -91,7 +91,7 @@
     }
 }
 
-@media (min-width: 1100px) { /* @media is used to configure a page behavior to big screens, as a computer screen, for examle */ 
+@media (min-width: 1100px) { /* @media is used, in this case, to configure a page behavior to big screens, as a computer screen, for examle */ 
     #landing-page #container {
         max-width: 1100px;
         display: grid;
