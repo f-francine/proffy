@@ -8,12 +8,13 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
 
     <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/header.css">
-    <link rel="stylesheet" href="/styles/teach-page.css">
-    <link rel="stylesheet" href="/styles/forms.css">
+    <link rel="stylesheet" href="/styles/partials/header.css">
+    <link rel="stylesheet" href="/styles/partials/teach-page.css">
+    <link rel="stylesheet" href="/styles/partials/forms.css">
     
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 
+    <script src="/scripts/addField.js" defer></script>
 </head>
 <body id="teach-page"> 
     <div id="container">
@@ -26,7 +27,7 @@
             </div>
             <div class="header-content">
                 <strong>Que incrível que você quer ensinar!</strong>  
-                <p>O primeiro passo é preencher o formulário de inscrição</p>
+                <p>O primeiro passo é preencher o formulário de inscrição.</p>
             </div>
         </header>
         <main>
@@ -53,9 +54,9 @@
                 <fieldset>
                     <legend>Sobre a aula</legend>
                     <div class="select-block">
-                        <label for="subject" id="subject"></label>
-                        <select name="subject" id="subject">
-                            <option value="" disabled="">Selecione uma opção</option>
+                        <label for="subject">Matéria</label>
+                        <select name="subject" id="subject" required>
+                            <option value="">Selecione uma opção</option>
                             <option value="0">Artes</option>
                             <option value="1">Biologia</option>
                             <option value="2">Ciências</option>
@@ -69,19 +70,19 @@
                         </select>
                     </div>
                     <div class="input-block">
-                        <label for="cost">Custo aula/hora<small>(R$)</small></label>
+                        <label for="cost">Custo da aula/hora<small>(R$)</small></label>
                         <input type="cost" id="cost" type="number" required>
                     </div>
                 </fieldset>
                 <fieldset id="schedule-items">
                     <legend>Horários disponíveis
-                        <button id="add-time">+ Novo horário</button>
+                        <button type="button" id="add-time">+ Novo horário</button>
                     </legend>
                     <div class="schedule-item">
                         <div class="select-block">
                             <label for="weekday">Dia da semana</label>
                             <select name="weekday[]" required>
-                                <option value="" disabled="">Selecione uma opção</option>
+                                <option value="" >Selecione uma opção</option>
                                 <option value="0">Domingo</option>
                                 <option value="1">Segunda-feira</option>
                                 <option value="2">Terça-feira</option>
