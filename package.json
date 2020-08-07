@@ -1,0 +1,26 @@
+{
+  "name": "proffy",
+  "version": "1.0.0",
+  "description": "Study plataform developed during Next Level Week bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f-francine/proffy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/f-francine/proffy/issues"
+  },
+  "homepage": "https://github.com/f-francine/proffy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
