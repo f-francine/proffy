@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proffy | Sua plataforma de estudos online</title>
+    <title>Seja um professor | Proffy</title>
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
 
@@ -57,21 +57,18 @@
                         <label for="subject">Matéria</label>
                         <select name="subject" id="subject" required>
                             <option value="">Selecione uma opção</option>
-                            <option value="0">Artes</option>
-                            <option value="1">Biologia</option>
-                            <option value="2">Ciências</option>
-                            <option value="3">Educação Física</option>
-                            <option value="4">Física</option>
-                            <option value="5">Geografia</option>
-                            <option value="6">História</option>
-                            <option value="7">Matemática</option>
-                            <option value="8">Potuguês</option>
-                            <option value="9">Química</option>
+                            
+                            {%for subject in subjects%}
+                                <option value="{{loop.index}}" {{ "selected" if filters.subject == loop.index }} >
+                                    {{subject}}
+                                </option>
+                            {%endfor%}
+
                         </select>
                     </div>
                     <div class="input-block">
                         <label for="cost">Custo da aula/hora<small>(R$)</small></label>
-                        <input type="cost" id="cost" type="number" required>
+                        <input name="cost" id="cost" type="number" required>
                     </div>
                 </fieldset>
                 <fieldset id="schedule-items">
@@ -82,14 +79,14 @@
                         <div class="select-block">
                             <label for="weekday">Dia da semana</label>
                             <select name="weekday[]" required>
-                                <option value="" >Selecione uma opção</option>
-                                <option value="0">Domingo</option>
-                                <option value="1">Segunda-feira</option>
-                                <option value="2">Terça-feira</option>
-                                <option value="3">Quarta-feira</option>
-                                <option value="4">Quinta-feira</option>
-                                <option value="5">Sexta-feira</option>
-                                <option value="6">Sábado</option>
+                                <option value="">Selecione uma opção</option>
+                            
+                                {%for weekday in weekdays%}
+                                    <option value="{{loop.index0}}">
+                                        {{weekday}}
+                                    </option>
+                                {%endfor%}
+
                             </select>
                         </div>
                         <div class="input-block">
