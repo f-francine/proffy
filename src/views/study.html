@@ -64,26 +64,30 @@
         </header>
 
         <main>
-            {%for proffy in proffys%} <!-- it is a ninjucks sintaxe  -->
-                <article class="teacher-item">
-                    <header> 
-                        <img 
-                            src="{{proffy.avatar}}" 
-                            alt="{{proffy.name}}"> 
-                        <div>
-                            <strong>{{proffy.name}}</strong>
-                            <span>{{proffy.subject}}</span>
-                        </div>
-                    </header> 
-                    <p>{{proffy.bio}}</p>
-                    <footer>
-                        <p>Preço/hora: <strong>R$ {{proffy.cost}}</strong></p>
-                        <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy.whatsapp}}&text=Olá, {{proffy.name}}! Tenho interesse nas suas aulas de {{proffy.subject}}." class="button" target="_blank">
-                            <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
-                        </a>
-                    </footer>
-                </article>
-            {%endfor%}
+            {%if proffys == ""%}
+                <p class="no-results">Não foi encontrado nenhum professor disponível.</p>
+            {%else%}
+                {%for proffy in proffys%} <!-- it is a ninjucks sintaxe  -->
+                    <article class="teacher-item">
+                        <header> 
+                            <img 
+                                src="{{proffy.avatar}}" 
+                                alt="{{proffy.name}}"> 
+                            <div>
+                                <strong>{{proffy.name}}</strong>
+                                <span>{{proffy.subject}}</span>
+                            </div>
+                        </header> 
+                        <p>{{proffy.bio}}</p>
+                        <footer>
+                            <p>Preço/hora: <strong>R$ {{proffy.cost}}</strong></p>
+                            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy.whatsapp}}&text=Olá, {{proffy.name}}! Tenho interesse nas suas aulas de {{proffy.subject}}." class="button" target="_blank">
+                                <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
+                            </a>
+                        </footer>
+                    </article>
+                {%endfor%}
+            {%endif%}
 
         </main> <!-- main content -->
     </div>
